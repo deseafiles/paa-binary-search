@@ -105,10 +105,10 @@ def cariBarangSama(namaBarang):
             row = cursor.fetchone()
             stokBaru = row[1] + stok
             database.tambahDataBarang(stokBaru, namaBarang)
-            print("Barang berhasil ditambahkan!")
+            print(f"Barang {hasil[idx]} berhasil ditambahkan!")
 
         except ValueError as e:
-            print(f"Error saat menambahkan barang: {e}")
+            print(f"Error saat menambahkan barang {hasil[idx]}: {e}")
     else:
         stok = int(input('Masukkan Jumlah Stok = '))
         harga = int(input('Masukkan Harga Satuan = '))
@@ -119,10 +119,10 @@ def cariBarangSama(namaBarang):
             newBarang.pengecekan_stok()
             newBarang.pengecekan_harga()
             database.insertDataBarang(newBarang.nama, newBarang.stok, newBarang.harga)
-            print("Barang berhasil ditambahkan!")
+            print(f"Barang {hasil[idx]} berhasil ditambahkan!")
 
         except ValueError as e:
-            print(f"Error saat menambahkan barang: {e}")
+            print(f"Error saat menambahkan barang {hasil[idx]}: {e}")
     con.commit()
     cursor.close()
     con.close()
