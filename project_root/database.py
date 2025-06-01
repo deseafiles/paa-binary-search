@@ -139,7 +139,7 @@ def cariBarang(namaBarang):
     if idx != -1:
         print(f"Barang ditemukan: {hasil[idx]}")
         cursor.execute('SELECT nama, stok, harga FROM barang WHERE nama = %s', (hasil[idx],))
-        row = cursor.fetchone() #Pelajari lebih dalam hal ini
+        row = cursor.fetchone()
         print("Detail Barang:")
         print(f"Nama  : {row[0]}")
         print(f"Stok  : {row[1]}")
