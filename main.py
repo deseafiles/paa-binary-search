@@ -1,6 +1,4 @@
 import project_root.database as database
-from project_root.barang import Barang
-
 
 def main():
     database.buatTableBarang()
@@ -29,7 +27,7 @@ def main():
                 harga = input('Masukkan Harga = ')
                 
                 database.editDataBarang(nama, stok, harga)
-                
+
             case 4:
                 nama = input("Masukkan nama barang yang ingin dihapus: ")
                 database.hapusDataBarang(nama)
