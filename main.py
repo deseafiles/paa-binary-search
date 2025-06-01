@@ -21,19 +21,7 @@ def main():
 
             case 2:
                 nama = input('Masukkan Nama Barang = ')
-                stok = int(input('Masukkan Jumlah Stok = '))
-                harga = int(input('Masukkan Harga Satuan = '))
-                
-                newBarang = Barang(nama, stok, harga)
-
-                try:
-                    newBarang.pengecekan_stok()
-                    newBarang.pengecekan_harga()
-                    database.insertDataBarang(newBarang.nama, newBarang.stok, newBarang.harga)
-                    print("Barang berhasil ditambahkan!")
-
-                except ValueError as e:
-                    print(f"Error saat menambahkan barang: {e}")
+                database.cariBarangSama(nama)
 
             case 3:
                 nama = input('Masukkan Nama Barang = ')
@@ -41,12 +29,11 @@ def main():
                 harga = input('Masukkan Harga = ')
                 
                 database.editDataBarang(nama, stok, harga)
+                
             case 4:
                 nama = input("Masukkan nama barang yang ingin dihapus: ")
                 database.hapusDataBarang(nama)
-                #Tambahkan error penghapusan barang
-                print("Barang berhasil dihapus!")
-
+                
             case 5:
                 nama = input('Masukkan Nama Barang yang Dicari = ')
                 database.cariBarang(nama)
