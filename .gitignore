@@ -8,9 +8,5 @@ __pycache__/
 # File environment
 .env
 
-# File database SQLite
-*.db
-dataBarang.db
-
 # IDE-related files
 .project
